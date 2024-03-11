@@ -1,0 +1,23 @@
+<div class="container-fluid my-3">
+  <h4 class="text-center mb-3 mt-3">Welcome Pratik , This is your todo list</h4>
+</div>
+<div class="container" style="display: flex;justify-content: center;">
+<div class="todo-item" style="background-color: rgb(167, 239, 239);width: 40vw;min-width: 300px;height: 45vh;min-height: 350px;">
+<app-add-todo (addTodo)="addTodoFromEvent($event)"></app-add-todo>
+</div>
+</div>
+<div class="todo-item">
+<h4>Pratik's Todos</h4>
+<div *ngIf="todos.length; else noTodosMessage">
+  <div *ngFor="let todo of todos">
+    <app-todo-item
+      [todo]="todo"
+      (todoDelete)="deleteTodo($event)"
+    ></app-todo-item>
+  </div>
+</div>
+
+<ng-template #noTodosMessage>
+  <p>No todos to work</p>
+</ng-template>
+</div>

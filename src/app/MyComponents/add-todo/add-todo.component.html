@@ -1,0 +1,31 @@
+<div class="add-todo-form">
+<h4>Add work</h4>
+
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <div class="form-group mb-3">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        [(ngModel)]="title"
+        class="form-control"
+        id="title"
+        name="title"
+      />
+      <div *ngIf="titleInvalid" class="text-danger">Title is required</div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="desc">Description</label>
+      <input
+        type="text"
+        [(ngModel)]="desc"
+        class="form-control"
+        id="desc"
+        name="desc"
+      />
+      <div *ngIf="descInvalid" class="text-danger">Description is required</div>
+    </div>
+    <button type="submit" class="btn btn-sm btn-primary">Add</button>
+  </div>
+</form>
+</div>
